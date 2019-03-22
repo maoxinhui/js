@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 512px;
+				height: 400px;
+				margin: 100px auto;
+				border: 1px solid black;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.box div{
+				width: 100%;
+				height: 200px;
+				position: absolute;
+				left: 0;
+				cursor: pointer;
+			}
+			.box div.up{
+				top: 0;
+			}
+			.box div.down{
+				bottom: 0;
+			}
+			img{
+				width: 100%;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="images/mi.png" alt="###"/>
+			<div class="item up"></div>
+			<div class="item down"></div>
+		</div>
+		<script>
+			window.onload=function(){
+				//获取元素
+				var img=document.getElementsByTagName("img")[0];
+				var item=document.getElementsByClassName("item");
+				var num=0;
+				var timer=null;
+				//绑定事件
+				item[0].onmouseover=function(){
+//					clearInterval(timer);
+					//间歇调用
+					timer=setInterval(function(){
+						if(num>-1070){
+							num--;
+							img.style.top=num+"px";
+						}else{
+							//清除间歇调用
+							clearInterval(timer);
+						}
+					},20)
+				}
+				item[1].onmouseover=function(){
+//					clearInterval(timer);
+					//间歇调用
+					timer=setInterval(function(){
+						if(num<0){
+							num++;
+							img.style.top=num+"px";
+						}else{
+							//清除间歇调用
+							clearInterval(timer);
+						}
+					},20)
+				}
+				//鼠标划出清除间歇调用
+				item[0].onmouseout=function(){
+					clearInterval(timer);
+				}
+				item[1].onmouseout=function(){
+					clearInterval(timer);
+				}
+			}
+		</script>
+	</body>
+</html>

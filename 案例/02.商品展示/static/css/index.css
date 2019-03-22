@@ -1,0 +1,26 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.show {
+	width: 360px;
+	height: 430px;
+	border: 1px solid black;
+	margin: 100px auto;
+}
+
+.show_up {
+	width: 360px;
+	height: 360px;
+	background-image: url(../img/01big.jpg);
+}
+
+.show_down {
+	width: 100%;
+	height: 70px;
+}
+
+.show_down img {
+	float: left;
+}

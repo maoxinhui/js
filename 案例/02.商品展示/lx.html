@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.bd{
+				width: 360px;
+				height: 460px;
+				border: 1px solid black;
+				margin: 0 auto;
+			}
+			.bd .up{
+				width: 360px;
+				height: 360px;
+				border: 1px solid black;
+				background: url(static/img/01big.jpg);
+			}
+			.down{
+				width: 360px;
+				height: 100px;
+			}
+			.down img{
+				width: 72px;
+				height: 100px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bd">
+			<div class="up"></div>
+			<div class="down">
+				<img src="static/img/01.jpg"/>
+				<img src="static/img/02.jpg"/>
+				<img src="static/img/03.jpg"/>
+				<img src="static/img/04.jpg"/>
+				<img src="static/img/05.jpg"/>
+			</div>
+		</div>
+		<script>
+			window.onload=function(){
+				var img=document.getElementsByTagName("img");
+				var up=document.getElementsByClassName("up")[0];
+				for(var i=0;i<img.length;i++){
+					(function(i){
+						img[i].onmouseover=function(){
+							up.style.backgroundImage="url(static/img/0"+(i+1)+"big.jpg)"
+						}
+					})(i)
+				}
+			}
+		</script>
+	</body>
+</html>

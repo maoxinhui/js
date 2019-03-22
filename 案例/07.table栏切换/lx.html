@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			a{
+				text-decoration: none;
+				color: black;
+			}
+			.nav{
+				width: 100%;
+				height: 60px;
+				background-color: yellow;
+			}
+			.nav_middle{
+				width: 1000px;
+				height: 60px;
+				background-color: red;
+				margin: 0 auto;
+			}
+			.nav .nav_middle a{
+				width: 200px;
+				height: 60px;
+				float: left;
+				line-height: 60px;
+				text-align: center;
+			}
+			.nav .nav_middle a.active{
+				background-color: green;
+				color: white;
+			}
+			.nav .nav_middle a:hover{
+				background-color: green;
+				color: white;
+			}
+			.divbody{
+				width: 100%;
+				height: 200px;
+				background-color: pink;
+			}
+			.divbody .item{
+				width: 100%;
+				height: 200px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<div class="nav_middle">
+					<a class="active">首页</a>
+					<a>首页</a>
+					<a>首页</a>
+					<a>首页</a>
+					<a>首页</a>
+			</div>
+		</div>
+		<div class="divbody">
+			<div class="item" style="display: block;">111111</div>
+			<div class="item">222222</div>
+			<div class="item">333333</div>
+			<div class="item">444444</div>
+			<div class="item">555555</div>
+		</div>
+		<script>
+			window.onload=function(){
+				var a=document.getElementsByTagName("a");
+				var items=document.getElementsByClassName("item");
+				for(var i=0;i<a.length;i++){
+					(function(i){
+						a[i].onclick=function(){
+							for(var j=0;j<a.length;j++){
+								a[j].className="";
+								items[j].style.display="none";
+							}
+							a[i].className="active";
+							items[i].style.display="block";
+						}
+					})(i)
+				}
+			}
+		</script>
+	</body>
+</html>

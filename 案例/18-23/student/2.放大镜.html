@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 350px;
+				height: 350px;
+				background: url(images/001.jpg) no-repeat;
+				border: 1px solid gray;
+				margin: 100px;
+				position: relative;
+			}
+			.box .small{
+				position: relative;
+			}
+			.box .mask{
+				width: 100px;
+				height: 100px;
+				background-color: rgba(255,255,0,0.4);
+				cursor: move;
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			.box .big{
+				width: 450px;
+				height: 450px;
+				border: 1px solid gray;
+				margin-left: 360px;
+				overflow: hidden;
+				text-align: center;
+				position: relative;
+				display: none;
+			}
+			.box .big img{
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<!--小盒子-->
+			<div class="small">
+				<div class="mask">
+					
+				</div>
+			</div>
+			<div class="big">
+				<img src="images/0001.jpg"/>
+			</div>
+		</div>
+	</body>
+	<script>
+		window.onload=function(){
+			//遮罩层和右面的大图出现
+			var box=document.getElementById("box");
+			var mask=document.getElementsByClassName("mask")[0];
+			var big=document.getElementsByClassName("big")[0];
+			var img=document.getElementsByTagName("img")[0];
+			box.onmouseover=function(){
+				mask.style.display="block";
+				big.style.display="block";
+			}
+			box.onmouseout=function(){
+				mask.style.display="none";
+				big.style.display="none";
+			}
+			//控制移动
+			box.onmousemove=function(e){
+				//偏移值-box左偏移值-二分之一的mask
+				var left=e.clientX-box.offsetLeft-mask.offsetWidth/2;
+				var top=e.clientY-box.offsetTop-mask.offsetHeight/2;
+				if(left<0){
+					left=0;
+				}else if(left>250){
+					left=250;
+				}
+				if(top<0){
+					top=0;
+				}else if(top>250){
+					top=250;
+				}
+				mask.style.left=left+"px";
+				mask.style.top=top+"px";
+				var beishu=big.offsetWidth/box.offsetWidth;
+				img.style.left=-left*beishu+"px";
+				img.style.top=-top*beishu+"px";
+			}
+		}
+	</script>
+</html>

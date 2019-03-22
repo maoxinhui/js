@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// +  如果表达式中有一个是字符串，就拼接
+			var a = 1 + 2;
+			var a = "1"+ 2;
+			var a = 2 + '1';
+			var a = NaN + '1';
+			var a = Infinity + '1';
+			console.log(a);
+			
+			
+			//- 先对减号两边的值进行Number()转换
+			var a = 10 - 1;
+			var a = 10 - '1';
+			console.log(a);
+			// *
+			var a = 10 * '10';
+			console.log(a);
+			
+			// /
+			var a = 100/0;
+			console.log(a);
+			
+			
+			//  %
+			var a = 10%'3';
+			console.log(a);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

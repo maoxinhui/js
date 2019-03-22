@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin:0px;
+				padding:0px;
+			}
+			.box{
+				width: 400px;
+				height: 10px;
+				background-color: gray;
+				margin: 100px;
+				position: relative;
+			}
+			.box .bar{
+				width: 10px;
+				height: 20px;
+				background-color: red;
+				position: absolute;
+				top: -5px;
+				left: 0;
+				cursor: pointer;
+			}
+			.box .mask{
+				width: 0px;
+				height: 100%;
+				background-color: red;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<div class="bar"></div>
+			<!--遮罩层-->
+			<div class="mask"></div>
+		</div>
+		<p id="bfb"></p>
+	</body>
+	<script>
+		window.onload=function(){
+			//获取元素
+			var box=document.getElementById("box");
+			var bar=document.getElementsByClassName("bar")[0];
+			var mask=document.getElementsByClassName("mask")[0];
+			bar.onmousedown=function(e){
+				document.onmousemove=function(event){
+					var val=event.clientX-e.clientX;
+					if(val<0){
+						val=0;
+					}else if(val>390){
+						val=390;
+					}
+					bar.style.left=val+"px";
+					mask.style.width=val+"px";
+				}
+			}
+			document.onmouseup=function(){
+				document.onmousemove=function(){}
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--为了给别人写注释-->
+		echo "# web" >> README.md
+		<!--初始化本地仓库-->
+		git init
+		<!--将本地的代码传到云上    添加代码-->
+		git add README.md
+		<!--提交-->
+		git commit -m "first commit"
+		git commit -m "commit"
+		git commit -m "第二次提交"
+		<!--为了绑定远程仓库和本地仓库-->
+		git remote add origin https://github.com/maoxinhui/web.git
+		<!--将本地代码push到gitup上-->
+		git push -u origin master
+		
+		
+		
+		git remote add origin https://github.com/maoxinhui/web.git
+		git push -u origin master
+	</body>
+</html>

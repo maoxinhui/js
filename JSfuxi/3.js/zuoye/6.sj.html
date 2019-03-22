@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var i=prompt("请输入一个五位数：");
+//			var g=parseInt(i%10);
+//			var s=parseInt(i/10%10);
+//			var b=parseInt(i/100%10);
+//			var q=parseInt(i/1000%10); 
+//			var w=parseInt(i/10000);
+//			var result=(g==w)&&(s==q)?"是回文数":"不是回文数";
+//			alert(result); 
+			if(i&&i>9999&&i<100000){
+				if((parseInt(i/10000)==i%10)&&((parseInt(i/1000))%10==parseInt(i/10)%10)){
+					alert("是回文数");
+				}else{
+					alert("不是回文数");
+				}
+			}else{
+				alert("请输入一个正确的五位数！")
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

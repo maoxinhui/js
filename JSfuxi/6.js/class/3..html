@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var id=setInterval(function(){
+				document.write(new Date());
+			},2000);
+			
+			setInterval(function(){
+				clearInterval(id)
+			},20000);
+		</script>
+	</body>
+</html>

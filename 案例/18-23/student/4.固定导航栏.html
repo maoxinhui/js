@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			img{
+				/*清除图片底部默认的3像素*/
+				vertical-align: top;
+			}
+			div{
+				margin: 0 auto;
+			}
+			.main{
+				margin: 0 auto;
+				width: 1000px;
+				margin-top: 10px;
+			}
+			.fixed{
+				position: fixed;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<img src="images/top.png"/>
+		</div>
+		<div class="nav" id="nav">
+			<img src="images/nav.png"/>
+		</div>
+		<div class="main">
+			<img src="images/main.png"/>
+		</div>
+	</body>
+</html>
+<script src="my.js"></script>
+<script>
+	window.onscroll=function(){
+		var nav=$("nav");
+		var top=$("top");
+		var obj=scroll();
+		if(obj.top>top.offsetHeight){
+			nav.className="nav fixed";
+		}else{
+			nav.className="nav";
+		}
+	}
+</script>
+<!--<script>
+	window.onscroll=function(){
+		//监听页面滚动事件
+		var top=document.getElementById("top");
+		var nav=document.getElementById("nav");
+		//判断页面滚动高度是否大于第一张图片
+		if(window.pageYOffset>top.offsetHeight){
+			nav.className="nav fixed";
+		}else{
+			nav.className="nav";
+		}
+	}
+</script>-->
+

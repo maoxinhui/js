@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<script>
+			window.onload = function() {
+				var lis = document.getElementsByTagName("li");
+				for(var i = 0; i < lis.length; i++) {
+					if(i % 2 == 0) {
+						lis[i].style.backgroundColor = "red";
+					} else {
+						lis[i].style.backgroundColor = "yellow";
+					}
+					(function(i) {
+						lis[i].onmousemove = function() {
+							lis[i].style.backgroundColor = "purple";
+						}
+						lis[i].onmouseout = function() {
+							if(i % 2 == 0) {
+								lis[i].style.backgroundColor = "red";
+							} else {
+								lis[i].style.backgroundColor = "yellow";
+							}
+						}
+					})(i)
+				}
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			div{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+				top:30px;
+				left:0px;
+			}
+			/*css代码匀速运动*/
+			/*button:hover+.one{
+				left: 400px;
+				transition:left 3s linear;
+			}*/
+		</style>
+	</head>
+	<body>
+		<button>点击</button>
+		<div class="one"></div>
+		<script>
+			window.onload=function(){
+				var btn=document.getElementsByTagName("button")[0];
+				var div=document.getElementsByTagName("div")[0];
+				var num=0;
+				btn.onclick=function(){
+					var timer=setInterval(function(){
+						if(num<400){
+							num++;
+							div.style.left=num+"px";
+						}else{
+							clearInterval(timer);
+						}
+					},30)
+				}
+			}
+		</script>
+	</body>
+</html>

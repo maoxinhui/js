@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="demo">
+			<p>姓名：<input type="text" name="text"/></p>
+			<p>年龄：<input type="text" name="age"/></p>
+			<p>电话：<input type="text" name="tel"/></p>
+			<p>住址：<input type="text" name="add"/></p>
+			<button>确认</button>
+		<script>
+			window.onload=function(){
+				var demo=document.getElementById("demo");
+				var count=0;
+				console.log(demo.childNodes);
+				for(var i=0;i<demo.childNodes.length;i++){
+					if(demo.childNodes[i]){
+						count++;
+					}
+					console.log("第"+i+"个节点名称是："+demo.childNodes[i].nodeName);
+				}
+				console.log("body的子元素节点一共有"+count+"个");
+			}
+		</script>
+	</body>
+</html>

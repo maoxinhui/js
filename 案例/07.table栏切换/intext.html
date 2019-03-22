@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			a {
+				text-decoration: none;
+				color: black;
+			}
+			
+			.header {
+				width: 100%;
+				height: 60px;
+				background-color: #ccc;
+			}
+			
+			.header .container {
+				width: 1000px;
+				height: 60px;
+				margin: 0 auto;
+				background-color: pink;
+			}
+			
+			.header .container a {
+				float: left;
+				width: 200px;
+				height: 60px;
+				text-align: center;
+				line-height: 60px;
+			}
+			
+			.header .container a.active {
+				background-color: #0086c4;
+				color: white;
+			}
+			
+			.header .container a:hover {
+				background-color: #0086c4;
+				color: white;
+			}
+			
+			.body {
+				width: 100%;
+				height: 200px;
+				background-color: #008000;
+			}
+			
+			.body .item {
+				width: 100%;
+				height: 200px;
+				display: none;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var links = document.getElementsByTagName("a");
+				var items = document.getElementsByClassName("item");
+				for(var i = 0; i < links.length; i++) {
+					(function(i) {
+						links[i].onclick = function() {
+							//排它思想 将所有tab的active类去掉
+							for(var j = 0; j < links.length; j++) {
+								links[j].className = "";
+								items[j].style.display = "none";
+							}
+							//给点击的元素添加active类
+							links[i].className = "active";
+							items[i].style.display = "block";
+						}
+					})(i)
+
+//					links[i].index = i;
+//					links[i].onclick = function() {
+//						for(var j = 0; j < links.length; j++) {
+//							links[j].className = "";
+//							items[j].style.display = "none";
+//						}
+//						links[this.index].className = "active";
+//						items[this.index].style.display = "block";
+//					}
+
+
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="container">
+				<a href="#" class="active">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+			</div>
+		</div>
+		<div class="body">
+			<div class="item" style="display: block;">1111111</div>
+			<div class="item">2222222</div>
+			<div class="item">333333333</div>
+			<div class="item">44444444</div>
+			<div class="item">55555555555</div>
+		</div>
+	</body>
+
+</html>

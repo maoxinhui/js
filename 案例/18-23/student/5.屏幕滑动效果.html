@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			/*让html和body标签的宽和高都和屏幕一样*/
+			html,body{
+				width: 100%;
+				height: 100%;
+			}
+			ul,ol{
+				list-style: none;
+			}
+			#ul{
+				width: 100%;
+				height: 100%;
+			}
+			#ul li{
+				width: 100%;
+				height: 100%;
+			}
+			#ol{
+				position: fixed;
+				top: 20px;
+				left: 50px;
+			}
+			#ol li{
+				width: 50px;
+				height: 50px;
+				border: 1px solid gray;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="ul">
+			<li>楼层11</li>
+			<li>楼层22</li>
+			<li>楼层33</li>
+			<li>楼层44</li>
+			<li>楼层55</li>
+		</ul>
+		<ol id="ol">
+			<li>楼层1</li>
+			<li>楼层2</li>
+			<li>楼层3</li>
+			<li>楼层4</li>
+			<li>楼层5</li>
+		</ol>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	var olis=document.getElementById("ol").children;
+	var ulis=document.getElementById("ul").children;
+	var colors=["red","orange","green","yellow","blue"];
+	var num=0;
+	var target=0;
+	for(var i=0;i<olis.length;i++){
+		olis[i].style.backgroundColor=colors[i];
+		ulis[i].style.backgroundColor=colors[i];
+		olis[i].index=i;
+		olis[i].onclick=function(){
+			target=ulis[this.index].offsetTop;//偏移值 
+		}
+	}
+	setInterval(function(){
+		num=num+(target-num)/10;
+		window.scrollTo(0,num);
+	},30)
+</script>

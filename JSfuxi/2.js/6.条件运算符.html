@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//(判断句)?(语句1):(语句2)
+			var a = 10;
+			a>11?a++:a--;
+			console.log(a);//9
+			
+			//a:9->10->11
+			//表达式：9+11=20
+			
+			((a++)+(++a))>19?a++:a--;
+			console.log(a); //12
+			
+			
+			var a = 10;
+			var b = (a++) + ++a;
+			//a:10  11  12
+			//10+12
+			console.log(a);//12
+			console.log(b);//22
+			
+		</script>
+	</body>
+</html>

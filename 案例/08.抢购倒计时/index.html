@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div></div>
+		<script>
+			setInterval(getDao, 1000);
+			function getDao() {
+				var div = document.getElementsByTagName("div")[0];
+				var date1 = new Date();
+				var date2 = new Date("2019/3/20 11:00:00");
+				//时间戳 毫秒数
+				var time = date2.getTime() - date1.getTime();
+				//计算相差秒数
+				var seconds = time / 1000;
+				//计算天数
+				var day = parseInt(seconds / 3600 / 24);
+				//计算小时
+				var hour = parseInt(seconds / 3600 % 24);
+				//计算分数
+				var second = seconds - day * 24* 3600 - hour*3600;
+				//计算分钟数
+				var min = parseInt(second / 60);
+				//计算秒数
+				var s = parseInt(second % 60);
+				div.innerHTML = "倒计时为：" + day + "天" + hour + "小时" + min + "分" + s + "秒";
+			}
+		</script>
+	</body>
+
+</html>

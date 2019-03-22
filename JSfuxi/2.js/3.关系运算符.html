@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>关系运算符</title>
+	</head>
+	<body>
+		<script>
+			//< 比较结束后，返回true或者false
+			console.log(1<4<8);  //true
+			//如果< 左右两边都是字符串的时候，转换为ASCII来比较
+			console.log('A' < 'a') //true
+			//如果其中有一个数值，则先进行转换，在比较
+			console.log(89 < "a") //false
+			
+			// == 只比较数值
+			// ===  除了比较数值，还要比较数据类型
+			
+			
+			console.log(1 == '1'); //true
+			console.log(1 === '1');  //false
+			
+			console.log(null == undefined)//true
+			console.log(null === undefined)//false
+			
+			
+		</script>
+		
+	</body>
+</html>

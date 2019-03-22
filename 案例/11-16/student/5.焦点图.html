@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			img{
+				/*去除图片底部默认的3像素*/
+				display: block;
+			}
+			.box{
+				width: 490px;
+				height: 170px;
+				border: 1px solid gray;
+				margin: 100px auto;
+				padding: 5px;
+				position: relative;
+			}
+			.box .inner{
+				width: 100%;
+				height: 100%;
+				background-color: palevioletred;
+				position: relative;
+				overflow: hidden;
+			}
+			.box .inner ul{
+				list-style: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 1000%;
+			}
+			.box .inner ul li{
+				float: left;
+			}
+			.box ol{
+				list-style: none;
+				position: absolute;
+				left: 50%;
+				bottom: 10px;
+				margin-left: -58px;
+			}
+			.box ol li{
+				float: left;
+				width: 18px;
+				height: 18px;
+				background-color: white;
+				margin-left: 5px;
+				line-height: 18px;
+				text-align: center;
+				cursor: pointer;
+			}
+			.box ol li.current{
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="BOX">
+			<div class="inner">
+				<ul>
+					<li><img src="img/01.jpg"/></li>
+					<li><img src="img/02.jpg"/></li>
+					<li><img src="img/03.jpg"/></li>
+					<li><img src="img/04.jpg"/></li>
+					<li><img src="img/05.jpg"/></li>
+				</ul>
+			</div>
+			<ol>
+				<li class="current">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ol>
+		</div>
+		<script>
+			window.onload=function(){
+				var ul=document.getElementsByTagName("ul")[0];
+				var ol=document.getElementsByTagName("ol")[0];
+				var olis=ol.children;
+				var startnum=0,num=0;
+				for(var i=0;i<olis.length;i++){
+//					olis[i].onmousemove=function(){
+//					(function(i){
+//						//排它
+//						for(var j=0;j<olis.length;j++){
+//							olis[j].className="";
+//						}
+//						olis[i].className="current";
+//					 }
+//					)(i)
+					olis[i].index=i;
+					olis[i].onmousemove=function(event){
+						//排它
+						for(var j=0;j<olis.length;j++){
+							olis[j].className="";
+						}
+//						this.className="current";
+						event.target.className="current";
+						num = -(490*this.index);
+//						ul.style.left=num+"px";
+					}
+				}
+				setInterval(function(){
+					startnum=startnum+(num-startnum)/10;
+					ul.style.left=startnum+"px";
+				},20)
+			}
+		</script>
+	</body>
+</html>

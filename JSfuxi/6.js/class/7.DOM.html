@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			//js的入口
+			window.onload=function(){
+				//获取ul节点
+				var ul=document.getElementById("ul");
+				console.log(ul.nodeType);
+				//获取ul子节点
+				var lis=ul.childNodes;
+				console.log(lis);
+				console.log(lis[0]);
+				
+				//获取ul第一个孩子节点
+				console.log(ul.firstChild);
+				console.log(ul.firstChild.nodeType);
+				
+				//获取ul最后一个孩子节点
+				console.log(ul.lastChild);
+				console.log(ul.lastChild.nodeType);
+				
+				//获取父节点
+				console.log(ul.parentNode);
+				console.log(ul.parentNode.nodeType);
+				
+				//获取上一个兄弟节点
+				console.log(ul.previousSibling);
+				console.log(ul.previousSibling.nodeType);
+				
+				//获取下一个兄弟节点
+				console.log(ul.nextSibling);
+				console.log(ul.nextSibling.nodeType);
+				
+				//元素节点
+				console.log(ul.nodeName);//UL
+				var list=document.getElementById("list");
+				console.log(list.nodeType);
+				console.log(list.firstChild.nodeValue);
+				
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="ul">
+			<li id="list">1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+		</ul>
+	</body>
+</html>

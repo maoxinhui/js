@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			label{
+				vertical-align: top;
+			}
+			textarea{
+				width: 100px;
+				height: 40px;
+			}
+			button{
+				vertical-align: top;
+			}
+			div{
+				width: 400px;
+				height: 400px;
+				background-color: #CCC;
+				border: 2px solid #aaa;
+				overflow: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<label>张三</label>
+		<textarea name="message"></textarea>
+		<button>提交</button>
+		<div></div>
+		<script>
+			var btn=document.getElementsByTagName("button")[0];
+			var div=document.getElementsByTagName("div")[0];
+			btn.onclick=function(){
+				var val=document.getElementsByTagName("textarea")[0].value;
+				div.innerHTML +="张三:"+val+"<br/>";
+				document.getElementsByTagName("textarea")[0].value="";
+			}
+		</script>
+	</body>
+</html>

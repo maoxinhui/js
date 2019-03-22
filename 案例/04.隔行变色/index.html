@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<style>
+			li:nth-child(2n){
+				background-color: yellow;
+			}
+			li:nth-child(2n+1){
+				background-color: red;
+			}
+			li:hover{
+				background-color: purple;
+			}
+		</style>-->
+	</head>
+
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<script>
+			window.onload = function() {
+				var lis = document.getElementsByTagName("li");
+				for(var i = 0; i < lis.length; i++) {
+					if(i % 2 == 0) {
+						lis[i].style.backgroundColor = "red";
+					} else {
+						lis[i].style.backgroundColor = "yellow";
+					}
+					(function(i) {
+						//鼠标移入
+						lis[i].onmouseover = function() {
+							lis[i].style.backgroundColor = "purple";
+						}
+						//鼠标移出
+						lis[i].onmouseout = function() {
+							if(i % 2 == 0) {
+								lis[i].style.backgroundColor = "red";
+							} else {
+								lis[i].style.backgroundColor = "yellow";
+							}
+						}
+					})(i)
+				}
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+				top:30px;
+				left: 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<button>点击</button>
+		<div></div>
+		<script>
+			window.onload=function(){
+				var btn=document.getElementsByTagName("button")[0];
+				var div=document.getElementsByTagName("div")[0];
+				var num=0;
+				var target=400;
+				btn.onclick=function(){
+					setInterval(function(){
+						num=num+(target-num)/10;
+						div.style.left=num+"px";
+					},30)
+				}
+			}
+		</script>
+	</body>
+</html>

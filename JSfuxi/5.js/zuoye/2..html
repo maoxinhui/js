@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*var sp=["本次打折的商品有:","Nike背包","Adidas运动衫","李宁运动鞋","Kappa外套","361°腰包"];
+			for(var i=0;i<sp.length;i++){
+				document.write(sp[i]+"<br/>");
+			}*/
+			
+			//1
+			/*var sp=["本次打折的商品有:","Nike背包","Adidas运动衫","李宁运动鞋","Kappa外套","361°腰包"];
+			sp.splice(1,1);
+			sp.splice(5,0,"Adidas运动裤");
+			for(var i=0;i<sp.length;i++){
+				document.write(sp[i]+"<br/>");
+			}*/
+			
+			//2
+			var sp=["本次打折的商品有:","Nike背包","Adidas运动衫","李宁运动鞋","Kappa外套","361°腰包"];
+			sp.splice(1,1);
+			sp.splice(5,0,"Adidas运动裤");
+			sp.splice(2,1,"特步运动裤");
+			for(var i=0;i<sp.length;i++){
+				document.write(sp[i]+"<br/>");
+			}
+			
+			//3
+			/*var sp=["Nike背包","Adidas运动衫","李宁运动鞋","Kappa外套","361°腰包"];
+			document.write("本次打折的商品有:<br/>")
+			sp.splice(1,1);
+			sp.splice(4,0,"Adidas运动裤");
+			sp.splice(1,1,"特步运动裤");
+			document.write(sp.join("、"));*/
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="opened()">点击打开新的窗口</button>
+		<button onclick="move()">移动打开新的窗口</button>
+		<button onclick="resize()">点击打开窗口大小</button>
+		<button onclick="closed()">点击关闭窗口</button>
+		<script>
+			var opener;
+			function opened(){
+				opener=window.open("test.html","_blank","width=200,height=200,top=0,left=0");
+			}
+			function move(){
+				opener.moveTo(200,200);
+			}
+			function resize(){
+				opener.resizeTo(400,400);
+			}
+			function closed(){
+				window.close();
+				opener.close();
+			}
+		</script>
+	</body>
+</html>
